@@ -11,7 +11,7 @@ class Category extends Model
     
     protected $fillable = ['name'];
     
-    public function books()
+    public function book()
         {
             return $this->hasManyThrough(
                 '\App\Models\Book',
