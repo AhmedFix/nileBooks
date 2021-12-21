@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Validator;
 use App\Http\Resources\CategoryResource as CategoryResource;
+use App\Http\Requests\CategoryRequest;
 
 class CategoriesController extends BaseController
 {
@@ -27,7 +28,7 @@ class CategoriesController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $input = $request->all();
    
@@ -67,7 +68,7 @@ class CategoriesController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
         $input = $request->all();
    
