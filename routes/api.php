@@ -5,8 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BooksController;
-use App\Http\Controllers\API\AuthorsController;
-use App\Http\Controllers\API\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +22,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('v1/auth/logout',   [AuthController::class, 'logout']);
   });     
 Route::middleware('auth:sanctum')->prefix('v1')->group( function () {
-    Route::resource('authors', AuthorsController::class);
-    Route::resource('categories', CategoriesController::class);
     Route::apiResource('books', BooksController::class);
 
 });
