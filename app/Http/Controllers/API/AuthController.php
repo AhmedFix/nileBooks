@@ -62,10 +62,10 @@ class AuthController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function logout (Request $request) {
-        $accessToken = auth()->user()->token();
-        $token= $request->user()->tokens->find($accessToken);
-        $token->revoke();
-        return response(['message' => 'You have been successfully logged out.'], 200);
-        }
+    public function logout(Request $request){
+        Auth::user()->tokens()->delete();
+        return [
+            'message' => 'logged out'
+        ];
+    }
 }

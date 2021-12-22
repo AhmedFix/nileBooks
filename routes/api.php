@@ -26,4 +26,6 @@ Route::middleware('auth:sanctum')->prefix('v1')->group( function () {
     Route::resource('authors', AuthorsController::class);
     Route::resource('categories', CategoriesController::class);
     Route::apiResource('books', BooksController::class);
+    Route::post('v1/auth/logout', [AuthController::class, 'logout']);
+
 });
