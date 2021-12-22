@@ -20,6 +20,7 @@ use App\Http\Controllers\API\CategoriesController;
 */
 Route::post('v1/auth/register', [AuthController::class, 'register']);
 Route::post('v1/auth/login', [AuthController::class, 'login']);
+Route::post('v1/auth/logout', [AuthController::class, 'logout']);
      
 Route::middleware('auth:sanctum')->prefix('v1')->group( function () {
     Route::resource('authors', AuthorsController::class);
