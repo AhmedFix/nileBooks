@@ -65,7 +65,6 @@ class BooksController extends BaseController
         if (is_null($book)) {
             return $this->sendError('Book not found.');
         }
-   
         return $this->sendResponse(new BookResource($book), 'Book retrieved successfully.');
     }
     
