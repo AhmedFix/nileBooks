@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BooksController;
+use App\Http\Controllers\API\AuthorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
   });     
 Route::middleware('auth:sanctum')->prefix('v1')->group( function () {
     Route::apiResource('books', BooksController::class);
+    Route::apiResource('authors', AuthorsController::class);
 
 });
