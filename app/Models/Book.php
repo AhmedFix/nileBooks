@@ -37,4 +37,8 @@ class Book extends Model
             'created_at',
             'updated_at'
         ];
+
+    public function authers(){
+        return $this->belongsToMany(Author::class);
+    }
 }

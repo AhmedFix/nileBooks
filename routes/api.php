@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('v1/auth/logout',   [AuthController::class, 'logout']);
   });     
 Route::middleware('auth:sanctum')->prefix('v1')->group( function () {
-    Route::apiResource('books', BooksController::class);
-    Route::apiResource('authors', AuthorsController::class);
-
+  Route::apiResource('books', BooksController::class);
+  Route::apiResource('authors', AuthorsController::class);
 });
+Route::get('books',[BooksController::class,'index']);

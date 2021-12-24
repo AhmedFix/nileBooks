@@ -20,7 +20,7 @@ class BooksController extends BaseController
     public function index()
     {
         $books = Book::all();
-    
+        
         return $this->sendResponse(BookResource::collection($books), 'Books retrieved successfully.');
     }
     /**

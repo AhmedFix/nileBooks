@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->text('details');  
             $table->text('imgPath');
             $table->text('pdfUrl');
-            $table->string('state');          
+            $table->string('state');   
             $table->integer('pagesCount')->unsigned()->nullable();
             $table->timestamps();
         });

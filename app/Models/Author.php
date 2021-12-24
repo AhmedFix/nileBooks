@@ -12,5 +12,9 @@ class Author extends Model
         protected $hidden = [
             'created_at',
             'updated_at'
-        ];
+    ];
+
+    public function books(){
+        return $this->belongs(Book::class);
+    }
 }
