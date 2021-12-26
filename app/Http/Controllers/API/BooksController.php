@@ -40,7 +40,8 @@ class BooksController extends BaseController
             'pdfUrl' => 'required',
             'rate' => 'required',
             'pagesCount' => 'required',
-            'state'  => 'required'
+            'state'  => 'required',
+            'author_id' => 'required'
         ]);
    
         if($validator->fails()){
