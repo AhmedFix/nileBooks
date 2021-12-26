@@ -19,20 +19,6 @@ class Book extends Model
         'state'
         ]; 
 
-        public function author()
-        {
-           
-            return $this->hasManyThrough(
-            '\App\Models\Author',
-            '\App\Models\BookAuthor',
-            'book_id',
-            'id',
-            'id',
-            'author_id'
-            );
-            
-        }
-
         protected $hidden = [
             'created_at',
             'updated_at'
