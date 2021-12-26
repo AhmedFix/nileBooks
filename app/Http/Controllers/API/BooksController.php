@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Resources\BookResource as BookResource;
 use App\Models\Book;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -40,7 +39,8 @@ class BooksController extends BaseController
             'pdfUrl' => 'required',
             'rate' => 'required',
             'pagesCount' => 'required',
-            'state'  => 'required'
+            'state'  => 'required',
+            'author_id' => 'required'
         ]);
    
         if($validator->fails()){
