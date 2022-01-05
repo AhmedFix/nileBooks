@@ -31,7 +31,8 @@ class BooksTest extends TestCase
                         'pdfUrl'=>Book::first()->pdfUrl,
                         'rate'=>Book::first()->rate,
                         'pagesCount'=>Book::first()->pagesCount,
-                        'state'=>Book::first()->state
+                        'state'=>Book::first()->state,
+                        'categories'=>Book::first()->categories->toArray()
                     ]
                 ],
                 'message'=>"Books retrieved successfully."

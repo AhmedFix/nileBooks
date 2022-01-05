@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Author;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BookFactory extends Factory
@@ -21,7 +22,7 @@ class BookFactory extends Factory
             'pdfUrl' => $this->faker->sentence(), 
             'rate' => $this->faker->numberBetween(1, 10),
             'pagesCount' => $this->faker->numberBetween(1, 300), 
-            'state' => $this->faker->boolean()
+            'state' => $this->faker->boolean(),
         ];
     }
 
@@ -31,6 +32,11 @@ class BookFactory extends Factory
             $auther = Author::create([
                 'name'=>$this->faker->name(),
             ]);
+
+            $category = Category::factory()->create();
+
+            $book->categories()->attach($category->id);
+
             $book->authers()->attach($auther->id);
         });
 

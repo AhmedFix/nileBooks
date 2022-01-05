@@ -24,7 +24,12 @@ class BookResource extends JsonResource
             'rate' => $this-> rate,
             'pagesCount' => $this-> pagesCount,
             'state'  => $this-> state,
+<<<<<<< HEAD
            
+=======
+            'authors'=>$this->authers->toArray(),
+            'categories'=>$this->categories->toArray()
+>>>>>>> 65a2b16 (new update)
             // 'created_at' => $this->created_at->format('d/m/Y'),
             // 'updated_at' => $this->updated_at->format('d/m/Y'),
         ];

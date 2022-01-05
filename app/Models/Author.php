@@ -15,7 +15,13 @@ class Author extends Model
             'pivot'
     ];
 
+<<<<<<< HEAD
     // public function books(){
     //     return $this->belongs(Book::class);
     // }
+=======
+    public function books(){
+        return $this->belongsToMany(Book::class);
+    }
+>>>>>>> 65a2b16 (new update)
 }

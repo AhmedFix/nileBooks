@@ -24,7 +24,17 @@ class Book extends Model
             'updated_at'
         ];
 
+<<<<<<< HEAD
     // public function authers(){
     //     return $this->belongsToMany(Author::class);
     // }
+=======
+    public function authers(){
+        return $this->belongsToMany(Author::class);
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
+    }
+>>>>>>> 65a2b16 (new update)
 }

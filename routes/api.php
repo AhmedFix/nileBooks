@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BooksController;
 use App\Http\Controllers\API\AuthorsController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::middleware('auth:sanctum')->prefix('v1')->group( function () {
   Route::apiResource('authors', AuthorsController::class);
 });
 Route::get('books',[BooksController::class,'index']);
+
+Route::get('categories',[CategoryController::class,'index']);
