@@ -40,15 +40,29 @@ class BooksController extends BaseController
             'rate' => 'required',
             'pagesCount' => 'required',
             'state'  => 'required',
-            'author_id' => 'required'
+            'author_id' => 'required|exists:App\Models\Author,id',
+            'category_id' => 'required|exists:App\Models\Category,id'
         ]);
    
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
    
-        $book = Book::create($input);
-   
+        $book = Book::create([
+            'name' => $input['name'],
+            'details' => $input['details'],
+            'imgPath' => $input['imgPath'],
+            'pdfUrl' => $input['pdfUrl'],
+            'rate' => $input['rate'],
+            'pagesCount' => $input['pagesCount'],
+            'state'  => $input['state'],
+        ]);
+
+
+        $book->authers()->attach($input['author_id']);
+        $book->categories()->attach($input['category_id']);
+        
+
         return $this->sendResponse(new BookResource($book), 'Book created successfully.');
     } 
    
